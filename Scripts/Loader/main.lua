@@ -85,6 +85,10 @@ _G.fzLoader.load = function(table)
                             Flag = tabV.name..'-'..optionV.name;
                             Callback = (optionV.callback or function() end)
                         })
+
+                        if (optionV.default) then
+                            optionV.callback(true)
+                        end
                     end
                 end
             end
