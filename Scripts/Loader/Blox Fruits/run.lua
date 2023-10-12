@@ -57,7 +57,7 @@ _G.fzLoader.load({
         options = {
             {
                 type = 'toggle';
-                name = 'Auto UnSit (Recommended to Auto Chest Farm)';
+                name = 'Auto UnSit (Recommended to Auto Farm Chest)';
                 identifier = 'Auto UnSit';
                 default = false;
                 callback = function(state)
