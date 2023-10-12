@@ -16,32 +16,25 @@ _G.fzLoader.window = _G.fzLoader.lib:CreateWindow({
     LoadingTitle = 'FZ Loader';
     LoadingSubtitle = 'Thanks ArrayField';
     ConfigurationSaving = {
-        Enabled = false,
-        FolderName = nil, -- Create a custom folder for your hub/game
+        Enabled = false;
+        FolderName = nil; -- Create a custom folder for your hub/game
         FileName = 'FzLoader'
-    },
+    };
     Discord = {
-        Enabled = false,
-        Invite = 'noinvitelink', -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
-        RememberJoins = false -- Set this to false to make them join the discord every time they load it up
-    },
-    KeySystem = false, -- Set this to true to use our key system
+        Enabled = false;
+        Invite = 'noinvitelink';
+        RememberJoins = false
+    };
+    KeySystem = false;
     KeySettings = {
-        Title = '',
-        Subtitle = '',
-        Note = '',
-        FileName = 'key', -- It is recommended to use something unique as other scripts using ArrayField may overwrite your key file
-        SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-        GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like ArrayField to get the key from
-        Actions = {
-            [1] = {
-                Text = 'Click here to copy the key link <--',
-                OnPress = function()
-                    print('Pressed')
-                end,
-            }
-        },
-        Key = {''} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ('hello','key22')
+        Title = '';
+        Subtitle = '';
+        Note = '';
+        FileName = 'key';
+        SaveKey = true;
+        GrabKeyFromSite = false;
+        Actions = {};
+        Key = {''}
     }
 })
 
