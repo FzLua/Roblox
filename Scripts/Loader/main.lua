@@ -1,5 +1,5 @@
 if (_G.fzLoader) then
-    return
+    _G.fzLoader.lib:Destroy()
 end
 
 _G.fzLoader = {}
