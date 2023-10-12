@@ -82,7 +82,7 @@ _G.fzLoader.load = function(table)
                         _G.fzLoader.cache.options[tabV.name][optionV.identifier or optionI] = _G.fzLoader.cache.tab[tabV.name]:CreateToggle({
                             Name = optionV.name;
                             CurrentValue = optionV.default;
-                            Flag = tabV.name..'-'..optionV.name;
+                            Flag = (optionV.identifier or tabV.name..'-'..optionV.name);
                             Callback = (optionV.callback or function() end)
                         })
 
