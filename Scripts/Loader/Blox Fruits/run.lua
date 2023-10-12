@@ -108,10 +108,10 @@ _G.fzLoader.load({
             };
             {
                 type = 'button';
-                name = 'Auto Chest Farm';
+                name = 'Auto Farm Chest';
                 description = 'Run';
                 callback = function()
-                    return runScript('MTriet Hub - Auto Chest Farm', function()
+                    return runScript('MTriet Hub - Auto Farm Chest', function()
                         getgenv().Config = {
                             ["StartFarmChest"] = true,
                             ["Team"] = "Marines",
@@ -129,6 +129,20 @@ _G.fzLoader.load({
                         repeat wait() until game:IsLoaded()
 
                         loadstring(game:HttpGet('https://raw.githubusercontent.com/Minhtriettt/Free-Script/main/Chest-Farm.lua'))()
+                    end)
+                end;
+            };
+            {
+                type = 'section';
+                name = 'Thunder Z';
+            };
+            {
+                type = 'button';
+                name = 'Auto Farm Chest';
+                description = 'Run';
+                callback = function()
+                    return runScript('Thunder Z - Auto Farm Chest', function()
+                        loadstring(game:HttpGet("https://raw.githubusercontent.com/ThunderZ-05/HUB/main/Main/Chest/AllDevice.lua"))()
                     end)
                 end;
             };
