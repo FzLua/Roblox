@@ -1,4 +1,4 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/FzLua/Roblox/main/Scripts/Loader/main.lua?token=GHSAT0AAAAAACIZAKZNRVRYQUP3GKPURL6AZJHU2GQ'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/FzLua/Roblox/main/Scripts/Loader/main.lua?token=GHSAT0AAAAAACIZAKZMPTHEM5C3LIGW3B4WZJHU3UA'))()
 
 -- // --
 
@@ -58,10 +58,12 @@ _G.fzLoader.load({
             {
                 type = 'toggle';
                 name = 'Auto UnSit (Recommended to Auto Chest Farm)';
-                identifier = 'Auto UnSit'
+                identifier = 'Auto UnSit';
                 default = false;
                 callback = function(state)
-                    _G.fzLoader.cache.options2['Local Player']['Auto UnSit'] = state
+                    toggleStates['Local Player']['Auto UnSit'] = state
+
+                    return true
                 end;
             };
         };
@@ -78,6 +80,8 @@ _G.fzLoader.load({
                 description = 'Run';
                 callback = function()
                     print('test')
+
+                    return true
                 end;
             };
         };
@@ -97,7 +101,7 @@ _G.fzLoader.load({
                 name = 'Hub';
                 description = 'Run';
                 callback = function()
-                    runScript('MTriet Hub', function()
+                    return runScript('MTriet Hub', function()
                         loadstring(game:HttpGet('https://raw.githubusercontent.com/Minhtriettt/Free-Script/main/MTriet-Hub.lua'))()
                     end)
                 end;
@@ -107,7 +111,7 @@ _G.fzLoader.load({
                 name = 'Auto Chest Farm';
                 description = 'Run';
                 callback = function()
-                    runScript('MTriet Hub - Auto Chest Farm', function()
+                    return runScript('MTriet Hub - Auto Chest Farm', function()
                         getgenv().Config = {
                             ["StartFarmChest"] = true,
                             ["Team"] = "Marines",
