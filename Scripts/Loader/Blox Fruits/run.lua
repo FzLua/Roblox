@@ -1,4 +1,4 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/FzLua/Roblox/main/Scripts/Loader/main.lua?token=GHSAT0AAAAAACIZAKZMPTHEM5C3LIGW3B4WZJHU3UA'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/FzLua/Roblox/main/Scripts/Loader/main.lua'))()
 
 -- // --
 
