@@ -6,11 +6,11 @@ _G.fzLoader = {}
 
 --Documentation url: https://docs.sirius.menu/community/arrayfield
 
-print(os.date('%m/%d/%Y %H:%M:%S'))
+-- print(os.date('%m/%d/%Y %H:%M:%S'))
 
 getgenv().SecureMode = true
 
-_G.fzLoader.lib = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/ArrayField/main/Source.lua'))()
+_G.fzLoader.lib = loadstring(game:HttpGet('https://raw.githubusercontent.com/FzLua/Roblox/main/Scripts/Loader/library.lua'))()
 _G.fzLoader.window = _G.fzLoader.lib:CreateWindow({
     Name = 'FZ Loader V1';
     LoadingTitle = 'FZ Loader';
