@@ -76,7 +76,7 @@ _G.fzLoader.load({
         options = {
             {
                 type = 'section';
-                name = 'Tsuo';
+                name = 'Tsuo Scripts';
             };
             {
                 type = 'button';
