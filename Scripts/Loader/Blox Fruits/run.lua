@@ -17,7 +17,7 @@ function runScript(name, callback)
         Duration = 3;
         Image = 7734051052
     })
-    wait(2)
+    wait(0.5)
 
     _G.fzLoader.lib:Notify({
         Title = 'Load Script';
@@ -25,10 +25,10 @@ function runScript(name, callback)
         Duration = 5;
         Image = 7734037784
     })
-    wait(1)
+    wait(0.5)
 
     callback()
-    wait(2)
+    wait(1)
     
     _G.fzLoader.lib:Notify({
         Title = 'Load Script';
@@ -75,13 +75,17 @@ _G.fzLoader.load({
 
         options = {
             {
+                type = 'section';
+                name = 'Tsuo';
+            };
+            {
                 type = 'button';
-                name = 'Test';
+                name = 'Hub';
                 description = 'Run';
                 callback = function()
-                    print('test')
-
-                    return true
+                    return runScript('Tsuo Hub', function()
+                        loadstring(game:HttpGet('https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts'))()
+                    end)
                 end;
             };
         };
@@ -132,6 +136,7 @@ _G.fzLoader.load({
                     end)
                 end;
             };
+
             {
                 type = 'section';
                 name = 'Thunder Z';
