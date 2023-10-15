@@ -76,7 +76,19 @@ _G.fzLoader.load({
         options = {
             {
                 type = 'section';
-                name = 'Tsuo Scripts (Medium Key Level)';
+                name = 'Easy Key Level';
+            };
+
+
+
+            {
+                type = 'section';
+                name = 'Medium Key Level';
+            };
+
+            {
+                type = 'section';
+                name = 'Tsuo Scripts';
             };
             {
                 type = 'button';
@@ -88,6 +100,14 @@ _G.fzLoader.load({
                     end)
                 end;
             };
+
+            {
+                type = 'section';
+                name = 'Hard Key Level';
+            };
+
+
+            
         };
     };
     
