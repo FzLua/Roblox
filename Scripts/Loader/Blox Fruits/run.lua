@@ -76,11 +76,11 @@ _G.fzLoader.load({
         options = {
             {
                 type = 'section';
-                name = 'Tsuo Scripts';
+                name = 'Tsuo Scripts (Medium Key Level)';
             };
             {
                 type = 'button';
-                name = 'Hub';
+                name = 'Hub (Good for Raid and Farm)';
                 description = 'Run';
                 callback = function()
                     return runScript('Tsuo Hub', function()
@@ -96,6 +96,36 @@ _G.fzLoader.load({
         icon = 7743875263;
 
         options = {
+            {
+                type = 'section';
+                name = 'Thunder Z';
+            };
+            {
+                type = 'button';
+                name = 'Auto Farm Chest (Best farm)';
+                description = 'Run';
+                callback = function()
+                    return runScript('Thunder Z - Auto Farm Chest', function()
+                        loadstring(game:HttpGet('https://raw.githubusercontent.com/ThunderZ-05/HUB/main/Main/Chest/AllDevice.lua'))()
+                    end)
+                end;
+            };
+
+            {
+                type = 'section';
+                name = 'GLord';
+            };
+            {
+                type = 'button';
+                name = 'Loader (Best Auto-Shop)';
+                description = 'Run';
+                callback = function()
+                    return runScript('GLord', function()
+                        loadstring(game:HttpGet('https://raw.githubusercontent.com/GGhostVN/GhostLord/main/Main'))()
+                    end)
+                end;
+            };
+
             {
                 type = 'section';
                 name = 'MTriet';
@@ -117,37 +147,22 @@ _G.fzLoader.load({
                 callback = function()
                     return runScript('MTriet Hub - Auto Farm Chest', function()
                         getgenv().Config = {
-                            ["StartFarmChest"] = true,
-                            ["Team"] = "Marines",
-                            ["TimeReset"] = 5, -- No Edit
-                            ["White Screen"] = false,
-                            ["Stop The God's Chalice"] = true,
-                            ["Stop The Fist of Darkness"] = true,
-                            ["HopServer"] = {
-                                ["Enable"] = true,
-                                ["BypassServer"] = true,
-                                ["Region"] = "United States"
+                            ['StartFarmChest'] = true,
+                            ['Team'] = 'Marines',
+                            ['TimeReset'] = 5, -- No Edit
+                            ['White Screen'] = false,
+                            ['Stop The God\'s Chalice'] = true,
+                            ['Stop The Fist of Darkness'] = true,
+                            ['HopServer'] = {
+                                ['Enable'] = true,
+                                ['BypassServer'] = true,
+                                ['Region'] = 'United States'
                             },
-                            ["Server Discord"] = "https://discord.gg/mFzWdBUn45"
+                            ['Server Discord'] = 'https://discord.gg/mFzWdBUn45'
                         }
                         repeat wait() until game:IsLoaded()
 
                         loadstring(game:HttpGet('https://raw.githubusercontent.com/Minhtriettt/Free-Script/main/Chest-Farm.lua'))()
-                    end)
-                end;
-            };
-
-            {
-                type = 'section';
-                name = 'Thunder Z';
-            };
-            {
-                type = 'button';
-                name = 'Auto Farm Chest';
-                description = 'Run';
-                callback = function()
-                    return runScript('Thunder Z - Auto Farm Chest', function()
-                        loadstring(game:HttpGet("https://raw.githubusercontent.com/ThunderZ-05/HUB/main/Main/Chest/AllDevice.lua"))()
                     end)
                 end;
             };
@@ -186,13 +201,13 @@ while wait() do
         if (localPlayer.Character.Humanoid.Sit) then
             localPlayer.Character.Humanoid.Sit = false
             print('Player UnSit')
-            if (localPlayer.character:FindFirstChild("HumanoidRootPart")) then
+            if (localPlayer.character:FindFirstChild('HumanoidRootPart')) then
                 wait(0.05)
                 localPlayer.Character.Humanoid.Sit = true
                 wait(0.05)
                 localPlayer.Character.Humanoid.Sit = false
                 wait(0.05)
-                localPlayer.character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(Vector3.new(pos.x, pos.y + 10, pos.z))
+                localPlayer.character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(Vector3.new(pos.x, pos.y + 10, pos.z))
     
                 print('Player Teleported UP')
             end
