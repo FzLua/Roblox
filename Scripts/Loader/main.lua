@@ -88,7 +88,6 @@ _G.fzLoader.load = function(table)
                             Name = optionV.name;
                             Info = (optionV.info and {Title = optionV.info.title, Description = optionV.info.description, Image = optionV.info.image});
                             Options = optionV.options;
-                            CurrentOption = optionV.options[1];
                             MultiSelection = optionV.multi;
                             Flag = (optionV.identifier or tabV.name..'-'..optionV.name);
                             Callback = (optionV.callback or function() end)
