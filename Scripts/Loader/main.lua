@@ -68,14 +68,14 @@ _G.fzLoader.load = function(table)
                     elseif (optionV.type == 'button') then
                         _G.fzLoader.cache.options[tabV.name][optionV.identifier or optionI] = _G.fzLoader.cache.tab[tabV.name]:CreateButton({
                             Name = optionV.name;
+                            Info = (optionV.info and {Title = optionV.info.title, Description = optionV.info.description, Image = optionV.info.image});
                             Interact = optionV.description;
-                            Info = (optionV.info and {Title = optionV.info.title, Image = optionV.info.image, Description = optionV.info.description});
                             Callback = (optionV.callback or function() end)
                         })
                     elseif (optionV.type == 'toggle') then
                         _G.fzLoader.cache.options[tabV.name][optionV.identifier or optionI] = _G.fzLoader.cache.tab[tabV.name]:CreateToggle({
                             Name = optionV.name;
-                            Info = (optionV.info and {Title = optionV.info.title, Image = optionV.info.image, Description = optionV.info.description});
+                            Info = (optionV.info and {Title = optionV.info.title, Description = optionV.info.description, Image = optionV.info.image});
                             Flag = (optionV.identifier or tabV.name..'-'..optionV.name);
                             Callback = (optionV.callback or function() end)
                         })
@@ -86,6 +86,7 @@ _G.fzLoader.load = function(table)
                     elseif (optionV.type == 'dropdown') then
                         _G.fzLoader.cache.options[tabV.name][optionV.identifier or optionI] = _G.fzLoader.cache.tab[tabV.name]:CreateDropdown({
                             Name = optionV.name;
+                            Info = (optionV.info and {Title = optionV.info.title, Description = optionV.info.description, Image = optionV.info.image});
                             Options = optionV.options;
                             CurrentOption = optionV.options[1];
                             MultiSelection = optionV.multi;
