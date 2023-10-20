@@ -2768,6 +2768,9 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 				end
 				SaveConfiguration()
 			end
+			function ToggleSettings:Get()
+				return ToggleSettings.CurrentValue
+			end
 			function ToggleSettings:Destroy()
 				Toggle:Destroy()
 			end
