@@ -71,7 +71,7 @@ _G.fzLoader.load({
                 type = 'dropdown';
                 name = 'Change Aura Color';
                 identifier = 'Change Aura Color';
-                options = {'Remove', 'Orange Soda', 'Bright Yellow', 'Yellow Sunshine', 'Slimy Green', 'Green Lizard', 'Blue Jeans', 'Plump Purple', 'Fiery Rose', 'Heat Wave', 'Absolute Zero', 'Snow White', 'Pure Red', 'Winter Sky', 'Rainbow Saviour', 'Aquamarine', 'Light Pink'};
+                options = {'Remove', '#001 Orange Soda', '#002 Bright Yellow', '#003 Yellow Sunshine', '#004 Slimy Green', '#005 Green Lizard', '#006 Blue Jeans', '#007 Plump Purple', '#008 Fiery Rose', '#009 Heat Wave', '#010 Absolute Zero', '#011 Snow White', '#012 Pure Red', '#013 Winter Sky', '#014 Rainbow Saviour', '#015 Aquamarine', '#016 Light Pink'};
                 multi = false;
                 callback = function(auraSelected)
                     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', auraSelected)
