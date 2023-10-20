@@ -51,10 +51,14 @@ local toggleStates = {
 
 _G.fzLoader.load({
     {
-        name = 'Local Player';
+        name = 'Own Functions';
         icon = 7743871002;
 
         options = {
+            {
+                type = 'section';
+                name = 'Help Functions';
+            };
             {
                 type = 'toggle';
                 name = 'Auto UnSit (Recommended to Auto Farm Chest)';
