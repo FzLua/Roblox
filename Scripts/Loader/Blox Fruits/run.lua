@@ -57,6 +57,7 @@ _G.fzLoader.load({
                 type = 'toggle';
                 name = 'Auto UnSit (Recommended to Auto Farm Chest)';
                 identifier = 'Auto UnSit';
+                info = {title = 'Auto UnSit', description = 'Auto UnSit is a function that will make you get up from the chair automatically.'};
                 default = false;
                 callback = function(state)
                     return true
@@ -71,6 +72,7 @@ _G.fzLoader.load({
                 type = 'dropdown';
                 name = 'Change Aura Color';
                 identifier = 'Change Aura Color';
+                info = {title = 'Change Aura Color', description = 'Change Aura Color is a function that will change the color of your aura (You need to have the aura).'};
                 options = {'Remove', '#001 Orange Soda', '#002 Bright Yellow', '#003 Yellow Sunshine', '#004 Slimy Green', '#005 Green Lizard', '#006 Blue Jeans', '#007 Plump Purple', '#008 Fiery Rose', '#009 Heat Wave', '#010 Absolute Zero', '#011 Snow White', '#012 Pure Red', '#013 Winter Sky', '#014 Rainbow Saviour', '#015 Aquamarine', '#016 Light Pink'};
                 multi = false;
                 callback = function(auraSelected)
@@ -104,6 +106,7 @@ _G.fzLoader.load({
             {
                 type = 'button';
                 name = 'Hub (Good for Raid and Farm)';
+                info = {title = 'Tsuo Hub', description = 'Tsuo Hub is one of the best Blox Fruits scripts.\n\nIts best functions are to do Raids and Farm chests, among others.'};
                 description = 'Run';
                 callback = function()
                     return runScript('Tsuo Hub', function()
