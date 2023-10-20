@@ -82,6 +82,15 @@ _G.fzLoader.load = function(table)
                         if (optionV.default) then
                             optionV.callback(true)
                         end
+                    elseif (optionV.type == 'dropdown') then
+                        _G.fzLoader.cache.options[tabV.name][optionV.identifier or optionI] = _G.fzLoader.cache.tab[tabV.name]:CreateDropdown({
+                            Name = optionV.name;
+                            Options = optionV.options;
+                            CurrentOption = optionV.options[1];
+                            MultiSelection = optionV.multi;
+                            Flag = (optionV.identifier or tabV.name..'-'..optionV.name);
+                            Callback = (optionV.callback or function() end)
+                        })
                     end
                 end
             end
