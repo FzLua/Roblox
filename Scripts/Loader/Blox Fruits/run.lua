@@ -78,6 +78,7 @@ _G.fzLoader.load({
             {
                 type = 'dropdown';
                 name = 'Change Aura Color';
+                identifier = 'Change Aura Color';
                 options = {'Remove', 'Orange Soda', 'Bright Yellow', 'Yellow Sunshine', 'Slimy Green', 'Green Lizard', 'Blue Jeans', 'Plump Purple', 'Fiery Rose', 'Heat Wave', 'Absolute Zero', 'Snow White', 'Pure Red', 'Winter Sky', 'Rainbow Saviour', 'Aquamarine', 'Light Pink'};
                 multi = false;
                 callback = function(auraSelected)
@@ -375,8 +376,8 @@ function whileStart()
         end
         
         local pos = localPlayer.Character.HumanoidRootPart.Position
-
-        if (toggleStates['Local Player']['Auto UnSit']) then
+        
+        if (_G.fzLoader.cache.options['Own Functions']['Change Aura Color'].CurrentValue) then
             if (localPlayer.Character.Humanoid.Sit) then
                 localPlayer.Character.Humanoid.Sit = false
 
