@@ -8,14 +8,12 @@ local allSeas = {
     [7449423635] = 3
 };
 
-sea = allSeas[game.PlaceId]
+local sea = allSeas[game.PlaceId]
 
 local disponibleSeasToTP = {}
-
 for i, v in pairs(allSeas) do
     if (i ~= game.PlaceId) then
         table.insert(disponibleSeasToTP, 'Sea '..v)
-        print(i, v)
     end
 end
 
@@ -56,14 +54,12 @@ _G.fzLoader.load({
                 callback = function(seaSelected)
                     local seaSelected = string.gsub(seaSelected, 'Sea ', '')
                     local seaSelected = tonumber(seaSelected)
-                    
+
                     local eventNames = {
                         [1] = 'TravelMain';
                         [2] = 'TravelDressrosa';
                         [3] = 'TravelZou'
                     }
-
-                    print(seaSelected)
 
                     if (eventNames[seaSelected]) then
                         return game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(eventNames[seaSelected])
