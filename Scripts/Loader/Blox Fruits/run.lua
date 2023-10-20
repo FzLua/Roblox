@@ -377,7 +377,8 @@ function whileStart()
         
         local pos = localPlayer.Character.HumanoidRootPart.Position
         
-        print(_G.fzLoader.cache.options['Own Functions']['Change Aura Color']:Get(), 'att')
+        print(_G.fzLoader.cache.options['Own Functions']['Change Aura Color']:Get())
+        print('att')
         if (_G.fzLoader.cache.options['Own Functions']['Change Aura Color']:Get()) then
             if (localPlayer.Character.Humanoid.Sit) then
                 localPlayer.Character.Humanoid.Sit = false
