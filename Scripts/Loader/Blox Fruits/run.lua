@@ -399,7 +399,7 @@ function whileStart()
 end
 
 while (wait(1)) do
-    if (_G.fzLoader.whileUnlock ~= nil) then
+    if (_G.fzLoader and _G.fzLoader.whileUnlock ~= nil) then
         whileStart()
     end
 end
