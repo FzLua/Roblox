@@ -97,8 +97,5 @@ _G.fzLoader.load = function(table)
         end
 
         _G.fzLoader.whileUnlock = true
-
-        wait(5)
-        _G.fzLoader.whileStart()
     end
 end
