@@ -369,7 +369,11 @@ _G.fzLoader.load({
 local localPlayer = game.Players.LocalPlayer
 
 function whileStart()
-    while (_G.fzLoader and _G.fzLoader.whileUnlock and wait()) do
+    while (wait()) do
+        if (not _G.fzLoader or not _G.fzLoader.whileUnlock) then
+            break
+        end
+        
         local pos = localPlayer.Character.HumanoidRootPart.Position
 
         if (toggleStates['Local Player']['Auto UnSit']) then
