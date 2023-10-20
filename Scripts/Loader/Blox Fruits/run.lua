@@ -73,7 +73,16 @@ _G.fzLoader.load({
 
             {
                 type = 'section';
+                name = 'Remote Events';
+            };
+            {
+                type = 'dropdown';
                 name = 'Change Aura Color';
+                options = {'Remove', 'Orange Soda', 'Bright Yellow', 'Yellow Sunshine', 'Slimy Green', 'Green Lizard', 'Blue Jeans', 'Plump Purple', 'Fiery Rose', 'Heat Wave', 'Absolute Zero', 'Snow White', 'Pure Red', 'Winter Sky', 'Rainbow Saviour', 'Aquamarine', 'Light Pink'};
+                multi = false;
+                callback = function(auraSelected)
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', auraSelected)
+                end;
             };
             {
                 type = 'button';
