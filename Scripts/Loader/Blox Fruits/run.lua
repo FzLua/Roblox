@@ -2,43 +2,21 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/FzLua/Roblox/main/Scr
 
 -- // --
 
-local executingScript;
+local allSeas = {
+    [2753915549] = 1;
+    [4442272183] = 2;
+    [7449423635] = 3
+};
 
-function runScript(name, callback)
-    if (executingScript) then
-        return
+sea = allSeas[game.PlaceId]
+
+local disponibleSeasToTP = {}
+
+for i, v in pairs(allSeas) do
+    if (i ~= game.PlaceId) then
+        table.insert(disponibleSeasToTP, 'Sea '..v)
+        print(i, v)
     end
-
-    executingScript = true
-
-    _G.fzLoader.lib:Notify({
-        Title = 'Load Script';
-        Content = 'Carregando o script "'..name..'".';
-        Duration = 3;
-        Image = 7734051052
-    })
-    wait(0.5)
-
-    _G.fzLoader.lib:Notify({
-        Title = 'Load Script';
-        Content = 'Script carregado!\n\nExecutando...';
-        Duration = 5;
-        Image = 7734037784
-    })
-    wait(0.5)
-
-    callback()
-    wait(1)
-    
-    _G.fzLoader.lib:Notify({
-        Title = 'Load Script';
-        Content = 'Script Executado com sucesso.';
-        Duration = 5;
-        Image = 7733715400
-    })
-    executingScript = nil
-
-    return true
 end
 
 -- // --
@@ -67,6 +45,30 @@ _G.fzLoader.load({
             {
                 type = 'section';
                 name = 'Remote Events';
+            };
+            {
+                type = 'dropdown';
+                name = 'Change Sea';
+                identifier = 'Change Sea';
+                info = {title = 'Change Sea', description = 'Change Sea is a function that will change the world to the sea (You need to have the Sea unlocked).'};
+                options = disponibleSeasToTP;
+                multi = false;
+                callback = function(seaSelected)
+                    local seaSelected = string.gsub(seaSelected, 'Sea ', '')
+                    local seaSelected = tonumber(seaSelected)
+                    
+                    local eventNames = {
+                        [1] = 'TravelMain';
+                        [2] = 'TravelDressrosa';
+                        [3] = 'TravelZou'
+                    }
+
+                    print(seaSelected)
+
+                    if (eventNames[seaSelected]) then
+                        return game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(eventNames[seaSelected])
+                    end
+                end;
             };
             {
                 type = 'dropdown';
@@ -228,6 +230,47 @@ _G.fzLoader.load({
 
 local localPlayer = game.Players.LocalPlayer
 
+local executingScript;
+
+function runScript(name, callback)
+    if (executingScript) then
+        return
+    end
+
+    executingScript = true
+
+    _G.fzLoader.lib:Notify({
+        Title = 'Load Script';
+        Content = 'Carregando o script "'..name..'".';
+        Duration = 3;
+        Image = 7734051052
+    })
+    wait(0.5)
+
+    _G.fzLoader.lib:Notify({
+        Title = 'Load Script';
+        Content = 'Script carregado!\n\nExecutando...';
+        Duration = 5;
+        Image = 7734037784
+    })
+    wait(0.5)
+
+    callback()
+    wait(1)
+    
+    _G.fzLoader.lib:Notify({
+        Title = 'Load Script';
+        Content = 'Script Executado com sucesso.';
+        Duration = 5;
+        Image = 7733715400
+    })
+    executingScript = nil
+
+    return true
+end
+
+-- // --
+
 function whileStart()
     while (wait()) do
         if (not _G.fzLoader or not _G.fzLoader.whileUnlock) then
@@ -236,7 +279,7 @@ function whileStart()
         
         local pos = localPlayer.Character.HumanoidRootPart.Position
         
-        if (_G.fzLoader.cache.options['Own Functions']['Change Aura Color']:Get()) then
+        if (_G.fzLoader.cache.options['Own Functions']['Auto UnSit']:Get()) then
             if (localPlayer.Character.Humanoid.Sit) then
                 localPlayer.Character.Humanoid.Sit = false
 
