@@ -66,6 +66,147 @@ _G.fzLoader.load({
                     return true
                 end;
             };
+
+            {
+                type = 'section';
+                name = 'Change Aura Color';
+            };
+            {
+                type = 'button';
+                name = 'Remove';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', '')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#001 Orange Soda';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Orange Soda')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#002 Bright Yellow';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Bright Yellow')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#003 Yellow Sunshine';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Yellow Sunshine')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#004 Slimy Green';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Slimy Green')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#005 Green Lizard';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Green Lizard')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#006 Blue Jeans';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Blue Jeans')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#007 Plump Purple';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Plump Purple')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#008 Fiery Rose';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Fiery Rose')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#009 Heat Wave';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Heat Wave')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#010 Absolute Zero';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Absolute Zero')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#011 Snow White';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Snow White')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#012 Pure Red';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Pure Red')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#013 Winter Sky';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Winter Sky')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#014 Rainbow Saviour';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Rainbow Saviour')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#015 Aquamarine';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Aquamarine')
+                end;
+            };
+            {
+                type = 'button';
+                name = '#016 Light Pink';
+                description = 'Run';
+                callback = function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer('activateColor', 'Light Pink')
+                end;
+            };
         };
     };
 
