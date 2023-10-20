@@ -368,23 +368,31 @@ _G.fzLoader.load({
 
 local localPlayer = game.Players.LocalPlayer
 
-while (_G.fzLoader and _G.fzLoader.whileUnlock == nil and wait() or (_G.fzLoader.whileUnlock and wait())) do
-    local pos = localPlayer.Character.HumanoidRootPart.Position
+function whileStart()
+    while (_G.fzLoader and _G.fzLoader.whileUnlock and wait()) do
+        local pos = localPlayer.Character.HumanoidRootPart.Position
 
-    if (toggleStates['Local Player']['Auto UnSit']) then
-        if (localPlayer.Character.Humanoid.Sit) then
-            localPlayer.Character.Humanoid.Sit = false
-
-            if (localPlayer.character:FindFirstChild('HumanoidRootPart')) then
-                wait(0.05)
-                localPlayer.Character.Humanoid.Sit = true
-
-                wait(0.05)
+        if (toggleStates['Local Player']['Auto UnSit']) then
+            if (localPlayer.Character.Humanoid.Sit) then
                 localPlayer.Character.Humanoid.Sit = false
 
-                wait(0.05)
-                localPlayer.character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(Vector3.new(pos.x, pos.y + 10, pos.z))
+                if (localPlayer.character:FindFirstChild('HumanoidRootPart')) then
+                    wait(0.05)
+                    localPlayer.Character.Humanoid.Sit = true
+
+                    wait(0.05)
+                    localPlayer.Character.Humanoid.Sit = false
+
+                    wait(0.05)
+                    localPlayer.character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(Vector3.new(pos.x, pos.y + 10, pos.z))
+                end
             end
         end
+    end
+end
+
+while (wait(1)) do
+    if (_G.fzLoader.whileUnlock ~= nil) then
+        whileStart()
     end
 end
