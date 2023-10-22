@@ -93,6 +93,16 @@ _G.fzLoader.load = function(table)
                             Flag = (optionV.identifier or tabV.name..'-'..optionV.name);
                             Callback = (optionV.callback or function() end)
                         })
+                    elseif (optionV.type == 'slider') then
+                        _G.fzLoader.cache.options[tabV.name][optionV.identifier or optionI] = _G.fzLoader.cache.tab[tabV.name]:CreateSlider({
+                            Name = optionV.name;
+                            Info = (optionV.info and {Title = optionV.info.title, Description = optionV.info.description, Image = optionV.info.image});
+                            Range = {optionV.min, optionV.max};
+                            Increment = optionV.increment;
+                            Suffix = optionV.suffix;
+                            Flag = (optionV.identifier or tabV.name..'-'..optionV.name);
+                            Callback = (optionV.callback or function() end)
+                        })
                     end
                 end
             end
